@@ -1,0 +1,40 @@
+// Sorting an array of numbers in order from smallest to largest
+
+import java.util.Arrays;
+
+public class Sorter {
+
+	public static void sort(int[] unsorted) {					
+		for (int i = 0; i < unsorted.length; i++) {							
+			System.out.println("Number " + (i + 1) + ": " + unsorted[i]);
+		}
+	//This part is just to show what it is like without the Sorter being applied 
+	
+	System.out.println("The sorted array is:");
+	
+	Arrays.sort(unsorted);  
+
+		for (int i = 0; i < unsorted.length; i++) {
+			System.out.println("Number " + (i + 1) + ": " + unsorted[i]);
+			
+	// And now to demonstrate what it's like now that it is sorted
+		}
+	
+	}
+}
+
+//That introduces the class Sorter. Now to test it.
+
+
+
+public class Main {
+	
+	public static void main(String[] args) {
+		int[] numbers = {1, 22, 3, 79, 14, 2};
+		Sorter.sort(numbers);		// It took me longer than I care to admit to figure out how to call the sort method to the Sorter class
+		
+		}
+	
+	}
+
+
