@@ -1,0 +1,29 @@
+//This simply shows how to use arrays in a very basic way
+//Also introduces us to for and while loops
+
+
+public class Main {
+
+	public static void main(String[] args) {
+		int size = 3;
+		int[] a = new int[size]; //new keyword builds the array [3] = how many indices (cups) we want
+		
+		a[0] = 99;	// assign values to the "cups" in this way
+		a[1] = 33;
+		a[2] = 66;
+		
+		int i = 0;
+		
+		while (i < a.length){
+			System.out.println("array at " + i + " is " + a[i]);
+			i++;
+		}
+		for (int j = 0; j < a.length; j++){
+			System.out.println("array at " + j + " is " + a[j]);
+		// for loop takes everything in a while loop and puts it in a single statement;
+		// it all happens in the same order as in a while loop
+		}
+	}
+	
+
+}
