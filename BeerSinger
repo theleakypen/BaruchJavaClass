@@ -1,0 +1,49 @@
+
+public class BeerSinger {
+	private int numberOfBeers = 99;				// instance variable (class-local) state
+
+	public BeerSinger(int n) {					//manually define a constructor
+		numberOfBeers = n;
+	}
+	public int getNumberOfBeers() {
+		return numberOfBeers;
+	}
+
+	public void setNumberOfBeers(int n) {
+		if (n < 0){
+			System.out.println("number of bottles must be positive ... ignoring request to set");
+			return;												// immediately ends method returning nothing
+		}
+		
+		this.numberOfBeers = n;
+	}
+	
+	public void sing(){									// behavior
+		String s = " bottles ";							// variable (method-local, i.e. cannot be accessed outside method)
+		
+		while(numberOfBeers > 0){
+			System.out.println(numberOfBeers + s +"of beer on the wall,");
+			System.out.println(numberOfBeers + s +"of beer;");
+			System.out.println("Take one down, pass it around:");
+			
+			numberOfBeers--; 			// numberOfBeers = numberOfBeers - 1;
+			if (numberOfBeers == 1) {	//Because String s = "bottles" is outside of the while loop, 
+				s = " bottle ";			//once s changes to "bottle", it stays that way until the end of the loop!
+			}
+			if (numberOfBeers > 0){
+			System.out.println(numberOfBeers + s +"of beer on the wall!\n");
+			}
+		}
+		if (numberOfBeers == 0) {		
+			System.out.println("No more bottles of beer on the wall!");
+			//I put my "if (numberOfBeers == 0)" bit outside of the while loop; 
+			//Colin has it as the END of his while loop (with "return;" breaking the loop)
+			//I think neither way is better or more elegant than the other
+		}
+		
+	}
+}
+
+// 	class BeerSinger
+//		numberOfBeers
+//		sing()
