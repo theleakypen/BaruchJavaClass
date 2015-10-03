@@ -1,40 +1,38 @@
-// Sorting an array of numbers in order from smallest to largest
-
-import java.util.Arrays;
 
 public class Sorter {
 
-	public static void sort(int[] unsorted) {					
-		for (int i = 0; i < unsorted.length; i++) {							
-			System.out.println("Number " + (i + 1) + ": " + unsorted[i]);
-		}
-	//This part is just to show what it is like without the Sorter being applied 
-	
-	System.out.println("The sorted array is:");
-	
-	Arrays.sort(unsorted);  
-
-		for (int i = 0; i < unsorted.length; i++) {
-			System.out.println("Number " + (i + 1) + ": " + unsorted[i]);
+	public void sort (int[] a) {
+		int key, i;
+		for (int j = 1; j < a.length; j++) {		
+			key = a[j];					//This is an insertion sort method
+			i = j - 1;					//Look at each index 1 by 1 and
+			while (i > -1 && a[i] > key){			//move it down if it's smaller than the previous
+				a[i + 1] = a[i];			//index
+				i = i - 1;
+				
+			}
 			
-	// And now to demonstrate what it's like now that it is sorted
+			a[i + 1] = key;
 		}
-	
 	}
+	
 }
 
-//That introduces the class Sorter. Now to test it.
+//Testing it with Main class
 
+import java.util.Arrays;
 
 
 public class Main {
-	
-	public static void main(String[] args) {
-		int[] numbers = {1, 22, 3, 79, 14, 2};
-		Sorter.sort(numbers);		// It took me longer than I care to admit to figure out how to call the sort method to the Sorter class
+
+	public static void main(String[] args){
+		System.out.println("Insertion-sort");
+		int[] numbers = {17, 3, 2, 56, 6, 9};
+		System.out.println("pre-sort:");
+		System.out.println(Arrays.toString(numbers));
+		new Sorter().sort(numbers);
+		System.out.println("post-sort:");
+		System.out.println(Arrays.toString(numbers));
 		
-		}
-	
 	}
-
-
+}
