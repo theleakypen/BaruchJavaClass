@@ -12,4 +12,4 @@ The Sorter was homework for the class coming up tomorrow, but I'm pretty proud o
 finding out what Colin's solution to this one is.
 
 The textbook we're reading for this class is "Head First Java", which is well-written and quite engaging, although
-I still often feel over my head abotu the whole thing.
+I still often feel over my head about the whole thing.
